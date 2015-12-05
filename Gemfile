@@ -34,8 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Gem to make http requests
 gem 'httparty'
-# Gem to parse HTML
-gem 'nokogiri'
 
 gem 'puma'
 #from api

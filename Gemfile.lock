@@ -200,7 +200,6 @@ DEPENDENCIES
   httparty
   jbuilder (~> 2.0)
   jquery-rails
-  nokogiri
   puma
   rails (= 4.2.5)
   rspec-rails (~> 3.0)
