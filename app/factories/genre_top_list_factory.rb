@@ -13,7 +13,7 @@ class GenreTopListFactory
     build_top_paid_apps
     build_top_free_apps
     build_top_grossing_apps
-    #pull_apps_information_from_itunes
+    pull_apps_information_from_itunes
     genre_top_list
   end
 
