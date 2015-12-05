@@ -26,6 +26,8 @@ module ApiClients
       def fetch
         @response = get_request
         JSON(@response.body)
+      rescue
+        raise Errors::CategoryNotFoundError, 'category not found'
       end
     end
   end
