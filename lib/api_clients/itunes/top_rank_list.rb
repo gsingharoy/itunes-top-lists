@@ -2,6 +2,8 @@ module ApiClients
   module Itunes
     class TopRankList < Base
 
+      include Shared::TopRankListParser
+
       def initialize(query_params = { popId: 30 })
         self.query_params = query_params
         self.query_params[:dataOnly] = true
@@ -13,7 +15,8 @@ module ApiClients
       end
 
       def fetch
-        get_request
+        @response = get_request
+        response_to_h
       end
     end
   end
