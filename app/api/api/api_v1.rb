@@ -7,4 +7,6 @@ class API::ApiV1 < Grape::API
   get :ping do
     { result: 'pong' }
   end
+
+  mount ::API::V1Resources::Itunes::Genres::TopList
 end
