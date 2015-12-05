@@ -13,6 +13,10 @@ class GenreTopList
   end
 
   def sync_app_information!
-    # This will sync app information
+    [:top_paid_apps, :top_free_apps, :top_grossing_apps].each do |app_list|
+      self.send(app_list).each do |app|
+        app.sync_app_information!
+      end
+    end
   end
 end

@@ -13,10 +13,15 @@ class GenreTopListFactory
     build_top_paid_apps
     build_top_free_apps
     build_top_grossing_apps
+    #pull_apps_information_from_itunes
     genre_top_list
   end
 
   private
+
+  def pull_apps_information_from_itunes
+    self.genre_top_list.sync_app_information!
+  end
 
   def build_genre_top_list_basic_attrs
     self.genre_top_list.id    = response_body['genre']['id']
