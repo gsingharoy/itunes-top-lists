@@ -27,6 +27,7 @@ module ApiClients
         @response = get_request
         JSON(@response.body)
       rescue
+        #TODO: refactor this
         raise Errors::CategoryNotFoundError, 'category not found'
       end
     end

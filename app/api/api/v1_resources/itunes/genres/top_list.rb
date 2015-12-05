@@ -8,14 +8,20 @@ class API::V1Resources::Itunes::Genres::TopList < Grape::API
       end
       get ':id/top_list' do
         params[:device].try(:downcase) == 'ipad' ? pop_id = 47 : 30
-        itunes_response = ApiClients::Itunes::TopRankList.new(
-          genreId: params[:id],
-          popId: pop_id
-        ).fetch
-        genre_top_list = GenreTopListFactory.new(itunes_response).build
-        {
-          genre: genre_top_list
-        }
+        begin
+          itunes_response = ApiClients::Itunes::TopRankList.new(
+            genreId: params[:id],
+            popId: pop_id
+          ).fetch
+          genre_top_list = GenreTopListFactory.new(itunes_response).build
+          { genre: genre_top_list }
+        rescue ApiClients::Itunes::Errors::CategoryNotFoundError => e
+          status 404
+          { error: e.message }
+        rescue Error => e
+          status 500
+          { error: 'internal error' }
+        end
       end
     end
   end
