@@ -22,7 +22,7 @@ gem install rails
 Install bundle.
 ```sh
 bundle install
-
+```
 Now the setup is complete.
 
 Start server
