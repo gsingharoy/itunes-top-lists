@@ -12,9 +12,10 @@ describe ApiClients::Itunes::Base do
   end
 
   describe '#headers' do
-    it 'should return the constant DEFAULT_HEADERS' do
-      expect(subject.headers)
-        .to eq ApiClients::Itunes::Base::DEFAULT_HEADERS
+    it 'should raise error' do
+      expect{
+        subject.headers
+      }.to raise_error(RuntimeError)
     end
   end
 
