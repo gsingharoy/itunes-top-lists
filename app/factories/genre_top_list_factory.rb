@@ -4,7 +4,7 @@ class GenreTopListFactory
   attr_accessor :response_body, :genre_top_list
 
   def initialize(response_body)
-    @response_body = response_body
+    @response_body  = response_body
     @genre_top_list = GenreTopList.new
   end
 
