@@ -44,10 +44,10 @@ Usage
 --------------
 To get the top apps of the genre, weather (has genre id 6001) use the following curl request
 ```sh
-curl 'http://localhost:3000/api/v1/itunes/genres/6003/top_list'
+curl 'http://localhost:3000/api/v1/itunes/genres/6001/top_list'
 ```
 
 To get the top apps of the same genre but for the device iPad, pass the parameter 'device' into the request. By default it always returns iphone apps.
 ```sh
-curl 'http://localhost:3000/api/v1/itunes/genres/6003/top_list?device=ipad'
+curl 'http://localhost:3000/api/v1/itunes/genres/6001/top_list?device=ipad'
 ```
