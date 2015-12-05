@@ -7,9 +7,10 @@ class API::V1Resources::Itunes::Genres::TopList < Grape::API
         optional :device, type: String
       end
       get ':id/top_list' do
+        params[:device].try(:downcase) == 'ipad' ? pop_id = 47 : 30
         itunes_response = ApiClients::Itunes::TopRankList.new(
           genreId: params[:id],
-          popId: 30
+          popId: pop_id
         ).fetch
         genre_top_list = GenreTopListFactory.new(itunes_response).build
         {
