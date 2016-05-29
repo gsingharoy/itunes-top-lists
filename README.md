@@ -7,13 +7,13 @@ This is a simple API solution which retrieves the top apps from the US itunes st
 Installation
 ------------
 
-Install ruby version 2.2.2 using rvm .
+Install ruby version 2.3.0 using rvm .
 ```sh
-rvm install ruby-2.2.2
+rvm install ruby-2.3.0
 ```
-Use ruby verion 2.2.2 with a new gemset
+Use ruby verion 2.3.0 with a new gemset
 ```sh
-rvm use ruby-2.2.2@itunes-top-lists --create
+rvm use ruby-2.3.0@itunes-top-lists --create
 ```
 Install rails.
 ```sh
@@ -28,7 +28,7 @@ Now the setup is complete.
 Start server
 ------------
 ```sh
-rvm use ruby-2.2.2@itunes-top-lists
+rvm use ruby-2.3.0@itunes-top-lists
 bundle exec rails s
 ```
 You can now go to http://localhost:3000/api/v1/ping to check if everything is fine.
